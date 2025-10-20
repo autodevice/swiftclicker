@@ -1,4 +1,0 @@
-module SwiftClicker {
-    header "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker-Swift.h"
-    requires objc
-}

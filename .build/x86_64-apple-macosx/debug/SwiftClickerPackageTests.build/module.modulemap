@@ -1,4 +1,0 @@
-module SwiftClickerPackageTests {
-    header "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/SwiftClickerPackageTests-Swift.h"
-    requires objc
-}
