@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/master.swiftdeps"
+  },
+  "/Users/billy/repo/swiftclicker/Tests/SwiftClickerTests/SwiftClickerTests.swift": {
+    "dependencies": "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests.d",
+    "object": "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests.swift.o",
+    "swiftmodule": "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests.swiftdeps"
+  }
+}

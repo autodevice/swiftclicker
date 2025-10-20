@@ -1,0 +1,864 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.xctest/Contents/MacOS/SwiftClickerPackageTests",
+      "packagePath" : "/Users/billy/repo/swiftclicker",
+      "productName" : "SwiftClickerPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.SwiftClicker-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/sources",
+      "importPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/Device.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/HTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/SwiftClicker.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwiftClicker",
+      "moduleOutputPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClicker.swiftmodule",
+      "objects" : [
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/Device.swift.o",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/HTTPClient.swift.o",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx12.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker-Swift.h",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftclicker"
+      ],
+      "outputFileMapPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/Device.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/HTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClicker.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/Device.swift",
+        "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/HTTPClient.swift",
+        "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/SwiftClicker.swift"
+      ],
+      "tempsPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwiftClickerDemo-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/sources",
+      "importPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClickerDemo/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClicker.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "SwiftClickerDemo",
+      "moduleOutputPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerDemo.swiftmodule",
+      "objects" : [
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx12.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "SwiftClickerDemo_main",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftclicker"
+      ],
+      "outputFileMapPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerDemo.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/billy/repo/swiftclicker/Sources/SwiftClickerDemo/main.swift"
+      ],
+      "tempsPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwiftClickerPackageTests-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/sources",
+      "importPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwiftClickerPackageTests",
+      "moduleOutputPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx12.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/SwiftClickerPackageTests-Swift.h",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftclicker"
+      ],
+      "outputFileMapPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwiftClickerTests-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/sources",
+      "importPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Tests/SwiftClickerTests/SwiftClickerTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClicker.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwiftClickerTests",
+      "moduleOutputPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerTests.swiftmodule",
+      "objects" : [
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx14.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swiftclicker"
+      ],
+      "outputFileMapPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules/SwiftClickerTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/billy/repo/swiftclicker/Tests/SwiftClickerTests/SwiftClickerTests.swift"
+      ],
+      "tempsPath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "SwiftClicker" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftClicker",
+      "-package-name",
+      "swiftclicker",
+      "-incremental",
+      "-c",
+      "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/Device.swift",
+      "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/HTTPClient.swift",
+      "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/SwiftClicker.swift",
+      "-I",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx12.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker-Swift.h",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftclicker",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwiftClickerDemo" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftClickerDemo",
+      "-package-name",
+      "swiftclicker",
+      "-incremental",
+      "-c",
+      "/Users/billy/repo/swiftclicker/Sources/SwiftClickerDemo/main.swift",
+      "-I",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx12.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "SwiftClickerDemo_main",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftclicker",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwiftClickerPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftClickerPackageTests",
+      "-package-name",
+      "swiftclicker",
+      "-incremental",
+      "-c",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx12.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/SwiftClickerPackageTests-Swift.h",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftclicker",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwiftClickerTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwiftClickerTests",
+      "-package-name",
+      "swiftclicker",
+      "-incremental",
+      "-c",
+      "/Users/billy/repo/swiftclicker/Tests/SwiftClickerTests/SwiftClickerTests.swift",
+      "-I",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx14.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swiftclicker",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "SwiftClicker" : [
+
+    ],
+    "SwiftClickerDemo" : [
+      "SwiftClicker"
+    ],
+    "SwiftClickerPackageTests" : [
+      "SwiftClickerTests",
+      "SwiftClicker"
+    ],
+    "SwiftClickerTests" : [
+      "SwiftClicker"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/Device.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/HTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClicker/SwiftClicker.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/sources"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo-entitlement.plist"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Sources/SwiftClickerDemo/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/sources"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/Device.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/HTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerDemo.product/Objects.LinkFileList"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/sources"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/Device.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/HTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClicker.build/SwiftClicker.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/SwiftClickerTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/billy/repo/swiftclicker/Tests/SwiftClickerTests/SwiftClickerTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/SwiftClickerTests.build/sources"
+    },
+    "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/billy/repo/swiftclicker/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
