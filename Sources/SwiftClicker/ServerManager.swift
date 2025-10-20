@@ -1,4 +1,5 @@
 import Foundation
+import CommonCrypto
 
 public enum ServerError: Error {
     case adbNotFound
@@ -11,10 +12,12 @@ public enum ServerError: Error {
 public class ServerManager {
     private let deviceSerial: String?
     private var serverProcess: Process?
-    private let jarURL = "https://github.com/openatx/uiautomator2/releases/download/3.4.2/u2.jar"
+    private let jarURL = "https://public.uiauto.devsleep.com/u2jar/0.2.0/u2.jar"
+    private let port: Int
     
-    public init(deviceSerial: String? = nil) {
+    public init(deviceSerial: String? = nil, port: Int = 9008) {
         self.deviceSerial = deviceSerial
+        self.port = port
     }
     
     public func setupAndStartServer() async throws {
@@ -51,24 +54,28 @@ public class ServerManager {
     private func deployJar() async throws {
         print("   Deploying uiautomator2 JAR...")
         
-        // Check if JAR already exists on device
-        let checkResult = try await runAdbCommand(["shell", "ls", "/data/local/tmp/u2.jar"])
+        let targetPath = "/data/local/tmp/u2.jar"
         
-        if checkResult.contains("No such file") {
-            // Download JAR if not available locally
-            let jarPath = try await downloadJar()
-            
-            // Push JAR to device
-            print("   Pushing JAR to device...")
-            let pushResult = try await runAdbCommand(["push", jarPath, "/data/local/tmp/u2.jar"])
-            
-            if !pushResult.contains("1 file pushed") && !pushResult.isEmpty {
-                throw ServerError.jarDeploymentFailed
-            }
-            
-            // Clean up local JAR
+        // Download JAR locally first
+        let jarPath = try await downloadJar()
+        
+        // Check if device file matches local file hash
+        if try await checkDeviceFileHash(localPath: jarPath, remotePath: targetPath) {
+            print("   JAR already deployed with correct hash")
             try? FileManager.default.removeItem(atPath: jarPath)
+            return
         }
+        
+        // Push JAR to device
+        print("   Pushing JAR to device...")
+        let pushResult = try await runAdbCommand(["push", jarPath, targetPath])
+        
+        if !pushResult.contains("1 file pushed") && !pushResult.isEmpty {
+            throw ServerError.jarDeploymentFailed
+        }
+        
+        // Clean up local JAR
+        try? FileManager.default.removeItem(atPath: jarPath)
         
         print("   ✅ JAR deployed")
     }
@@ -89,6 +96,37 @@ public class ServerManager {
         }
         
         return jarPath
+    }
+    
+    private func checkDeviceFileHash(localPath: String, remotePath: String) async throws -> Bool {
+        guard FileManager.default.fileExists(atPath: localPath) else {
+            return false
+        }
+        
+        // Calculate local file MD5
+        guard let localData = FileManager.default.contents(atPath: localPath) else {
+            return false
+        }
+        
+        let localMD5 = md5Hash(data: localData)
+        
+        // Get remote file MD5 using toybox md5sum
+        do {
+            let output = try await runAdbCommand(["shell", "toybox", "md5sum", remotePath])
+            return output.contains(localMD5)
+        } catch {
+            // If md5sum fails, file probably doesn't exist
+            return false
+        }
+    }
+    
+    private func md5Hash(data: Data) -> String {
+        let digest = data.withUnsafeBytes { bytes in
+            var digest = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
+            CC_MD5(bytes.baseAddress, CC_LONG(data.count), &digest)
+            return digest
+        }
+        return digest.map { String(format: "%02x", $0) }.joined()
     }
     
     private func startServer() async throws {
@@ -115,9 +153,9 @@ public class ServerManager {
     private func setupPortForwarding() async throws {
         print("   Setting up port forwarding...")
         
-        _ = try await runAdbCommand(["forward", "tcp:9008", "tcp:9008"])
+        _ = try await runAdbCommand(["forward", "tcp:\(port)", "tcp:9008"])
         
-        print("   ✅ Port forwarding active")
+        print("   ✅ Port forwarding active (localhost:\(port) -> device:9008)")
     }
     
     private func verifyServerReady() async throws {
@@ -129,7 +167,7 @@ public class ServerManager {
         while attempts < maxAttempts {
             do {
                 let result = try await runCommand("curl", arguments: [
-                    "-s", "-m", "2", "http://127.0.0.1:9008/ping"
+                    "-s", "-m", "2", "http://127.0.0.1:\(port)/ping"
                 ])
                 
                 if result.trimmingCharacters(in: .whitespacesAndNewlines) == "pong" {
@@ -202,7 +240,7 @@ public class ServerManager {
         _ = try? await runAdbCommand(["shell", "pkill", "-f", "uiautomator"])
         
         // Remove port forwarding
-        _ = try? await runAdbCommand(["forward", "--remove", "tcp:9008"])
+        _ = try? await runAdbCommand(["forward", "--remove", "tcp:\(port)"])
         
         print("✅ Server stopped")
     }

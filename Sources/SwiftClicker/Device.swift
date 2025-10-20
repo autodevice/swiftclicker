@@ -43,12 +43,26 @@ public class Device {
     private let httpClient: HTTPClient
     private let serverManager: ServerManager
     private(set) var isConnected: Bool = false
+    private let allocatedPort: Int?
     
     public lazy var touch: TouchEvents = TouchEvents(device: self)
     
-    public init(host: String = "127.0.0.1", port: Int = 9008, deviceSerial: String? = nil) {
-        self.httpClient = HTTPClient(host: host, port: port)
-        self.serverManager = ServerManager(deviceSerial: deviceSerial)
+    public init(host: String = "127.0.0.1", port: Int? = nil, deviceSerial: String? = nil) {
+        // Allocate port automatically if not specified and deviceSerial is provided
+        let finalPort: Int
+        if let port = port {
+            finalPort = port
+            self.allocatedPort = nil
+        } else if deviceSerial != nil {
+            finalPort = PortManager.allocatePort()
+            self.allocatedPort = finalPort
+        } else {
+            finalPort = 9008 // Default port for default device
+            self.allocatedPort = nil
+        }
+        
+        self.httpClient = HTTPClient(host: host, port: finalPort)
+        self.serverManager = ServerManager(deviceSerial: deviceSerial, port: finalPort)
     }
     
     public func connect(autoSetupServer: Bool = true) async throws {
@@ -214,5 +228,17 @@ public class Device {
     public func disconnect() async {
         await serverManager.stopServer()
         isConnected = false
+        
+        // Release allocated port if we allocated one
+        if let port = allocatedPort {
+            PortManager.releasePort(port)
+        }
+    }
+    
+    deinit {
+        // Release port in case disconnect wasn't called
+        if let port = allocatedPort {
+            PortManager.releasePort(port)
+        }
     }
 }

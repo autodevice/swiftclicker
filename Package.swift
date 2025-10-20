@@ -15,6 +15,14 @@ let package = Package(
         .executable(
             name: "SwiftClickerDemo",
             targets: ["SwiftClickerDemo"]
+        ),
+        .executable(
+            name: "SwiftClickerPerformanceTest",
+            targets: ["SwiftClickerPerformanceTest"]
+        ),
+        .executable(
+            name: "SwiftClickerMultiDeviceDemo",
+            targets: ["SwiftClickerMultiDeviceDemo"]
         )
     ],
     dependencies: [],
@@ -25,6 +33,14 @@ let package = Package(
         ),
         .executableTarget(
             name: "SwiftClickerDemo",
+            dependencies: ["SwiftClicker"]
+        ),
+        .executableTarget(
+            name: "SwiftClickerPerformanceTest",
+            dependencies: ["SwiftClicker"]
+        ),
+        .executableTarget(
+            name: "SwiftClickerMultiDeviceDemo",
             dependencies: ["SwiftClicker"]
         ),
         .testTarget(
