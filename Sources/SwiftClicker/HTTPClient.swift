@@ -151,6 +151,8 @@ public class HTTPClient {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
+        urlRequest.setValue("uiautomator2", forHTTPHeaderField: "User-Agent")
+        urlRequest.timeoutInterval = 5.0
         
         do {
             let (data, response) = try await session.data(for: urlRequest)
@@ -163,7 +165,8 @@ public class HTTPClient {
                 return false
             }
             
-            return String(data: data, encoding: .utf8) == "pong"
+            let responseString = String(data: data, encoding: .utf8) ?? ""
+            return responseString.trimmingCharacters(in: .whitespacesAndNewlines) == "pong"
             
         } catch {
             return false

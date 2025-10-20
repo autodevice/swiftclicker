@@ -82,12 +82,12 @@ struct SwiftClickerDemo {
             print("\n✨ Demo completed successfully!")
             print("All touch and key events were sent to the device.")
             
+            print("\n🛑 Cleaning up...")
+            await device.disconnect()
+            
         } catch DeviceError.connectionFailed {
             print("❌ Failed to connect to device")
-            print("Make sure:")
-            print("• Android device/emulator is running")
-            print("• uiautomator2 server is running on port 9008")
-            print("• Device is accessible at 127.0.0.1:9008")
+            Device.setupInstructions()
         } catch DeviceError.notConnected {
             print("❌ Device not connected")
         } catch DeviceError.serverError(let message) {

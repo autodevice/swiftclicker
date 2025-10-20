@@ -41,20 +41,54 @@ public class TouchEvents {
 
 public class Device {
     private let httpClient: HTTPClient
+    private let serverManager: ServerManager
     private(set) var isConnected: Bool = false
     
     public lazy var touch: TouchEvents = TouchEvents(device: self)
     
-    public init(host: String = "127.0.0.1", port: Int = 9008) {
+    public init(host: String = "127.0.0.1", port: Int = 9008, deviceSerial: String? = nil) {
         self.httpClient = HTTPClient(host: host, port: port)
+        self.serverManager = ServerManager(deviceSerial: deviceSerial)
     }
     
-    public func connect() async throws {
-        let pingSuccess = try await httpClient.ping()
-        guard pingSuccess else {
-            throw DeviceError.connectionFailed
+    public func connect(autoSetupServer: Bool = true) async throws {
+        print("🔄 Connecting to uiautomator2 server...")
+        
+        // First, try to connect to existing server
+        if try await quickConnectTest() {
+            print("✅ Connected to existing server!")
+            isConnected = true
+            return
         }
-        isConnected = true
+        
+        if autoSetupServer {
+            print("   No existing server found, setting up new server...")
+            try await serverManager.setupAndStartServer()
+            
+            // Try connecting again after setup
+            if try await quickConnectTest() {
+                print("✅ Connected to newly started server!")
+                isConnected = true
+                return
+            }
+        }
+        
+        print("❌ Failed to connect to uiautomator2 server")
+        throw DeviceError.connectionFailed
+    }
+    
+    private func quickConnectTest() async throws -> Bool {
+        do {
+            let pingSuccess = try await httpClient.ping()
+            if pingSuccess {
+                // Double-check with a lightweight JSON-RPC call
+                _ = try await httpClient.jsonrpcCall(method: "deviceInfo")
+                return true
+            }
+        } catch {
+            // Ignore errors for quick test
+        }
+        return false
     }
     
     private func ensureConnected() throws {
@@ -136,5 +170,49 @@ public class Device {
         }
         
         try await touch.up(x: toX, y: toY)
+    }
+    
+    public func checkServerStatus() async -> Bool {
+        do {
+            let pingSuccess = try await httpClient.ping()
+            if pingSuccess {
+                // Also test JSON-RPC functionality
+                _ = try await httpClient.jsonrpcCall(method: "dumpWindowHierarchy", params: [false])
+                return true
+            }
+        } catch {
+            print("Server check failed: \(error.localizedDescription)")
+        }
+        return false
+    }
+    
+    public static func setupInstructions() {
+        print("")
+        print("📋 uiautomator2 Server Setup Instructions")
+        print(String(repeating: "=", count: 50))
+        print("")
+        print("1. Install uiautomator2 Python package:")
+        print("   pip install uiautomator2")
+        print("")
+        print("2. Connect Android device or start emulator:")
+        print("   adb devices  # Should show your device")
+        print("")
+        print("3. Initialize uiautomator2 server:")
+        print("   python -c \"import uiautomator2 as u2; d = u2.connect(); print('Server started!')\"")
+        print("")
+        print("4. Set up port forwarding (if needed):")
+        print("   adb forward tcp:9008 tcp:9008")
+        print("")
+        print("5. Test server connection:")
+        print("   curl http://127.0.0.1:9008/ping")
+        print("   # Should return 'pong'")
+        print("")
+        print("6. Keep the Python session alive or run in background")
+        print("")
+    }
+    
+    public func disconnect() async {
+        await serverManager.stopServer()
+        isConnected = false
     }
 }
