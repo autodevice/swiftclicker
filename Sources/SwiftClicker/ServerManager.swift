@@ -44,7 +44,7 @@ public class ServerManager {
     private func checkAdbConnection() async throws {
         print("   Checking ADB connection...")
         
-        let result = try await runCommand("adb", arguments: ["devices"])
+        let result = try await runAdbCommand(["devices"])
         guard result.contains("device") && !result.contains("offline") else {
             throw ServerError.deviceNotConnected
         }
@@ -187,7 +187,7 @@ public class ServerManager {
     }
     
     private func runAdbCommand(_ arguments: [String]) async throws -> String {
-        var adbArgs = ["adb"]
+        var adbArgs = [findAdbPath()]
         
         if let serial = deviceSerial {
             adbArgs.append(contentsOf: ["-s", serial])
@@ -196,6 +196,25 @@ public class ServerManager {
         adbArgs.append(contentsOf: arguments)
         
         return try await runCommand("", arguments: adbArgs)
+    }
+    
+    private func findAdbPath() -> String {
+        // Common adb installation paths
+        let commonPaths = [
+            "/usr/local/bin/adb",
+            "/opt/homebrew/bin/adb",
+            "\(NSHomeDirectory())/Library/Android/sdk/platform-tools/adb",
+            "/Users/\(NSUserName())/Library/Android/sdk/platform-tools/adb"
+        ]
+        
+        for path in commonPaths {
+            if FileManager.default.fileExists(atPath: path) {
+                return path
+            }
+        }
+        
+        // Fallback to PATH-based lookup
+        return "adb"
     }
     
     private func runCommand(_ command: String, arguments: [String]) async throws -> String {
