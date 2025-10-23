@@ -10,7 +10,7 @@ public enum ServerError: Error {
 }
 
 public class ServerManager {
-    private let deviceSerial: String?
+    public let deviceSerial: String?
     private var serverProcess: Process?
     private let jarURL = "https://public.uiauto.devsleep.com/u2jar/0.2.0/u2.jar"
     private let port: Int
@@ -186,7 +186,7 @@ public class ServerManager {
         throw ServerError.serverNotReady
     }
     
-    private func runAdbCommand(_ arguments: [String]) async throws -> String {
+    public func runAdbCommand(_ arguments: [String]) async throws -> String {
         var adbArgs = [findAdbPath()]
         
         if let serial = deviceSerial {

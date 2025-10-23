@@ -44,6 +44,8 @@ public class Device {
     private let serverManager: ServerManager
     private(set) var isConnected: Bool = false
     private let allocatedPort: Int?
+    private var deviceWidth: Int?
+    private var deviceHeight: Int?
     
     public lazy var touch: TouchEvents = TouchEvents(device: self)
     
@@ -72,6 +74,7 @@ public class Device {
         if try await quickConnectTest() {
             print("✅ Connected to existing server!")
             isConnected = true
+            await fetchDeviceDimensions()
             return
         }
         
@@ -83,6 +86,7 @@ public class Device {
             if try await quickConnectTest() {
                 print("✅ Connected to newly started server!")
                 isConnected = true
+                await fetchDeviceDimensions()
                 return
             }
         }
@@ -109,6 +113,39 @@ public class Device {
         guard isConnected else {
             throw DeviceError.notConnected
         }
+    }
+    
+    private func fetchDeviceDimensions() async {
+        do {
+            let output = try await serverManager.runAdbCommand(["shell", "wm", "size"])
+            
+            if let dimensions = parseDimensions(from: output) {
+                self.deviceWidth = dimensions.width
+                self.deviceHeight = dimensions.height
+            }
+        } catch {
+            print("⚠️ Failed to fetch device dimensions: \(error.localizedDescription)")
+        }
+    }
+    
+    private func parseDimensions(from output: String) -> (width: Int, height: Int)? {
+        // Parse "Physical size: 1080x1920" format
+        let lines = output.components(separatedBy: .newlines)
+        for line in lines {
+            if line.contains("Physical size:") {
+                let parts = line.components(separatedBy: ":")
+                if parts.count >= 2 {
+                    let sizeString = parts[1].trimmingCharacters(in: .whitespacesAndNewlines)
+                    let dimensions = sizeString.components(separatedBy: "x")
+                    if dimensions.count == 2,
+                       let width = Int(dimensions[0].trimmingCharacters(in: .whitespacesAndNewlines)),
+                       let height = Int(dimensions[1].trimmingCharacters(in: .whitespacesAndNewlines)) {
+                        return (width: width, height: height)
+                    }
+                }
+            }
+        }
+        return nil
     }
     
     internal func injectInputEvent(action: Int, x: Int, y: Int) async throws {
@@ -184,6 +221,13 @@ public class Device {
         }
         
         try await touch.up(x: toX, y: toY)
+    }
+    
+    public func getDimensions() -> (width: Int, height: Int)? {
+        guard let width = deviceWidth, let height = deviceHeight else {
+            return nil
+        }
+        return (width: width, height: height)
     }
     
     public func checkServerStatus() async -> Bool {

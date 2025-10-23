@@ -51,6 +51,11 @@ await device.press("home")
 await device.press("back")
 await device.press(keyCode: 4)  // back key
 
+// Get device dimensions
+if let dimensions = device.getDimensions() {
+    print("Device size: \(dimensions.width)x\(dimensions.height)")
+}
+
 // Always cleanup when done
 await device.disconnect()
 ```
@@ -140,6 +145,22 @@ await device.press(keyCode: 82)   // menu
 await device.press(keyCode: 24)   // volume up
 await device.press(keyCode: 25)   // volume down
 await device.press(keyCode: 26)   // power
+```
+
+### Device Information
+
+```swift
+// Get device screen dimensions (automatically fetched on connect)
+if let dimensions = device.getDimensions() {
+    print("Screen size: \(dimensions.width)x\(dimensions.height)")
+    
+    // Use dimensions for relative positioning
+    let centerX = dimensions.width / 2
+    let centerY = dimensions.height / 2
+    await device.click(x: centerX, y: centerY)
+} else {
+    print("Dimensions not available - ensure device is connected")
+}
 ```
 
 ### Error Handling
