@@ -12,7 +12,7 @@ public enum ServerError: Error {
 public class ServerManager {
     public let deviceSerial: String?
     private var serverProcess: Process?
-    private let jarURL = "https://public.uiauto.devsleep.com/u2jar/0.2.0/u2.jar"
+    private let jarURL = "https://zchoiejtcatzafqduhnp.supabase.co/storage/v1/object/public/public_assets/u2.jar"
     private let port: Int
     
     public init(deviceSerial: String? = nil, port: Int = 9008) {
